@@ -1,0 +1,118 @@
+﻿<Page x:Class="MarathonSkills.Pages.InteractiveMapPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InteractiveMapPage">
+    <Page.Resources>
+        <Style x:Key="PointButton" TargetType="{x:Type Button}">
+            <EventSetter Event="Click" Handler="Button_Click"></EventSetter>
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Grid>
+                            <Border Background="Orange" BorderBrush="Orange" BorderThickness="3" CornerRadius="30">
+                                <Ellipse Fill="Yellow" Opacity="0.6">
+
+                                </Ellipse>
+                            </Border>
+
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                        </Grid>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+        <Style x:Key="StartButton" TargetType="{x:Type Button}">
+            <EventSetter Event="Click" Handler="Button_Click"></EventSetter>
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Grid>
+                            <Border Background="Green" BorderBrush="Green" BorderThickness="3" CornerRadius="30">
+                                <Ellipse Fill="LightGreen" Opacity="0.6">
+
+                                </Ellipse>
+                            </Border>
+
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+                        </Grid>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+    </Page.Resources>
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <Canvas Width="500" Height="450">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="C:\Users\masha\Desktop\marathon-skills-2016-marathon-map.jpg"></ImageBrush>
+                </Canvas.Background>
+                <Button x:Name="S1" Width="35" Height="35" Style="{StaticResource StartButton}" Canvas.Left="299" Canvas.Top="10">Start
+
+                </Button>
+                <Button x:Name="S3" Width="35" Height="35" Style="{StaticResource StartButton}" Canvas.Left="65" Canvas.Top="88">Start
+
+                </Button>
+                <Button x:Name="S2" Width="35" Height="34" Style="{StaticResource StartButton}" Canvas.Left="230" Canvas.Top="404">Start
+
+                </Button>
+                <Button x:Name="b1" Width="25" Height="26" Style="{StaticResource PointButton}" Canvas.Left="343" Canvas.Top="82">
+                    <Button.Content>1</Button.Content>
+                </Button>
+                <Button x:Name="b2" Width="24" Height="26" Style="{StaticResource PointButton}" Canvas.Left="448" Canvas.Top="110">
+                    <Button.Content>2</Button.Content>
+                </Button>
+                <Button x:Name="b3" Width="25" Height="26" Style="{StaticResource PointButton}" Canvas.Left="460" Canvas.Top="212">
+                    <Button.Content>3</Button.Content>
+                </Button>
+                <Button x:Name="b4" Width="26" Height="26" Style="{StaticResource PointButton}" Canvas.Left="316" Canvas.Top="249">
+                    <Button.Content>4</Button.Content>
+                </Button>
+                <Button x:Name="b5" Width="25" Height="26" Style="{StaticResource PointButton}" Canvas.Left="270" Canvas.Top="408">
+                    <Button.Content>5</Button.Content>
+                </Button>
+                <Button x:Name="b6" Width="24" Height="26" Style="{StaticResource PointButton}" Canvas.Left="142" Canvas.Top="307">
+                    <Button.Content>6</Button.Content>
+                </Button>
+                <Button x:Name="b7" Width="25" Height="26" Style="{StaticResource PointButton}" Canvas.Left="96" Canvas.Top="158">
+                    <Button.Content>7</Button.Content>
+                </Button>
+                <Button x:Name="b8" Width="25" Height="26" Style="{StaticResource PointButton}" Canvas.Left="154" Canvas.Top="102">
+                    <Button.Content>8</Button.Content>
+                </Button>
+
+            </Canvas>
+            <Canvas Margin="10" VerticalAlignment="Top" x:Name="PlaceForPopup" Width="300" Height="1">
+
+            </Canvas>
+            <Popup x:Name="popup1" Width="300" Height="300" PlacementTarget="{Binding ElementName=PlaceForPopup}">
+                <StackPanel Orientation="Vertical" Background="LightGray">
+                    <TextBlock x:Name="CheckpointName"></TextBlock>
+                    <TextBlock x:Name="CheckpointDescription"></TextBlock>
+                </StackPanel>
+            </Popup>
+        </StackPanel>
+    </StackPanel>
+</Page>

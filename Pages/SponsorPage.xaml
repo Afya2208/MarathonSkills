@@ -1,0 +1,87 @@
+﻿<Page x:Class="MarathonSkills.Pages.SponsorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SponsorPage">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock HorizontalAlignment="Center">Спонсор бегуна</TextBlock>
+        <TextBlock HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Width="600">Пожалуйста выберите бегуна, которого вы хотели бы спонсировать и сумму, которую вы хотели бы спонсировать. Спасибо за вашу поддержку бегунов и их благотворительных учреждений.</TextBlock>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical">
+                <TextBlock  HorizontalAlignment="Center" >Информация о Спонсоре</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock TextAlignment="Right">Ваше имя:</TextBlock>
+                        <TextBlock TextAlignment="Right">Бегун:</TextBlock>
+                        <TextBlock TextAlignment="Right">Владелец карты:</TextBlock>
+                        <TextBlock TextAlignment="Right">Номер карты:</TextBlock>
+                        <TextBlock TextAlignment="Right">Срок действия:</TextBlock>
+                        <TextBlock TextAlignment="Right">CVC:</TextBlock>
+                        
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="5,0,0,0">
+                        <TextBox MaxLength="80" x:Name="SponsorNameBox"></TextBox>
+                        <ComboBox Name="RunnerComboBox" SelectionChanged="RunnerComboBox_SelectionChanged">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{}{0}">
+                                                <Binding Path="RunnerInfo"></Binding>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        
+                        <TextBox MaxLength="80" x:Name="CardOwnerBox"></TextBox>
+                        <TextBox MaxLength="16" x:Name="CardNumberBox"></TextBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox MaxLength="2" x:Name="CardMonthBox"></TextBox>
+                            <TextBox MaxLength="4" x:Name="CardYearBox"></TextBox>
+                        </StackPanel>
+                        <TextBox x:Name="CVCBox" MaxLength="3"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                <TextBlock  HorizontalAlignment="Center" >Благотворительность</TextBlock>
+                <StackPanel  HorizontalAlignment="Center"  Orientation="Horizontal">
+                    <TextBlock x:Name="CharityNameBlock"></TextBlock>
+                    <Button Name="CharityInfoButton" Click="CharityInfoButton_Click" Width="20" Height="20">i</Button>
+                    <Popup x:Name="popup1" StaysOpen="True" Placement="Center" Width="900" Height="700"
+                        AllowsTransparency="True"  >
+                        <Border BorderThickness="2" BorderBrush="Black">
+                            <StackPanel Orientation="Vertical" Background="White">
+                                <DockPanel LastChildFill="False">
+                                    <TextBlock DockPanel.Dock="Left" x:Name="CharityName">Навзание</TextBlock>
+                                    <Button  DockPanel.Dock="Right" Width="60" Height="30"  x:Name="ClosePopupButton" Click="ClosePopupButton_Click">ЗАКРЫТЬ</Button>
+                                </DockPanel>
+                                <Image Name="CharityLogo" Height="300" Width="300"></Image>
+                                <TextBlock Name="CharityDescription" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                </StackPanel>
+                <TextBlock HorizontalAlignment="Center" >Сумма пожертвования</TextBlock>
+                <TextBlock HorizontalAlignment="Center" x:Name="SumBlock"></TextBlock>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="MinusButton" Click="MinusButton_Click">-</Button>
+                    <TextBox x:Name="SumBox" Text="0" TextChanged="SumBox_TextChanged" Margin="5,0,5,0"></TextBox>
+                    <Button x:Name="PlusButton" Click="PlusButton_Click">+</Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal" Margin="0,10,0,0">
+                    <Button x:Name="PayButton" Click="PayButton_Click">Заплатить</Button>
+                    <Button x:Name="CancelButton" Click="CancelButton_Click">Отмена</Button>
+                </StackPanel>
+                
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>

@@ -1,0 +1,18 @@
+﻿<Page x:Class="MarathonSkills.Pages.CoordinatorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CoordinatorPage">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock>Меню координатора</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="RunnersButton" Click="RunnersButton_Click">Бегуны</Button>
+            <Button x:Name="SponsorsButton" Click="SponsorsButton_Click">Спонсоры</Button>
+        </StackPanel>
+    </StackPanel>
+</Page>

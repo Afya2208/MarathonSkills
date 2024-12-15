@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="379c4d66e970433398ceb1c2207a4f3a" Name="Diagram1" ZoomLevel="118">
+        <EntityTypeShape EntityType="MarathonSkillsModel.Charity" Width="1.5" PointX="6.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Country" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Event" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.EventType" Width="1.625" PointX="9.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Gender" Width="1.5" PointX="9.625" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Marathon" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Position" Width="1.5" PointX="12.875" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.RaceKitOption" Width="1.5" PointX="1.375" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Registration" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.RegistrationEvent" Width="1.5" PointX="8.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.RegistrationStatus" Width="1.5" PointX="4" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Role" Width="1.5" PointX="5.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Runner" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Sponsorship" Width="1.5" PointX="7.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Staff" Width="1.5" PointX="13.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Timesheet" Width="1.5" PointX="15.375" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.User" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Volunteer" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Registrat__Chari__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Marathon__Countr__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Runner__CountryC__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Volunteer__Count__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Event__EventType__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Event__MarathonI__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Registrat__Event__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Runner__Gender__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Staff__Gender__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Volunteer__Gende__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Staff__PositionI__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Registrat__RaceK__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Registrat__Regis__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Registrat__Regis__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Registrat__Runne__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Sponsorsh__Regis__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__User__RoleId__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Runner__Email__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Timesheet__Staff__59FA5E80" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.ArrivalItem" Width="1.5" PointX="15" PointY="14.5" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Item" Width="1.5" PointX="12.75" PointY="15.75" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.ItemsInKit" Width="1.5" PointX="15" PointY="19.75" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.Storage" Width="1.5" PointX="15" PointY="17.25" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__ArrivalIt__ItemI__05D8E0BE" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__ItemsInKi__ItemI__0D7A0286" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__Storage__ItemId__09A971A2" />
+        <AssociationConnector Association="MarathonSkillsModel.FK__ItemsInKi__RaceK__0E6E26BF" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.ItemComparateDistance" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MarathonSkillsModel.ItemComparateSpeed" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

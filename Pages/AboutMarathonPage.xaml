@@ -1,0 +1,57 @@
+﻿<Page x:Class="MarathonSkills.Pages.AboutMarathonPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AboutMarathonPage">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock HorizontalAlignment="Center">Информация о Marathon Skills 2016</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="MapButton" Click="MapButton_Click" Height="160" Width="160">
+                    <Canvas >
+                        
+                        <Image Canvas.Bottom="0" Canvas.Right="0" Height="160" Width="160" Source="C:\Users\masha\Desktop\marathon-skills-2016-marathon-map.jpg" Canvas.Left="-80" Canvas.Top="-80"></Image>
+                        <TextBlock Canvas.Left="-40" Canvas.Top="-40">Карта марафона</TextBlock>
+                        <TextBlock Canvas.Left="-60" Canvas.Top="-20" TextWrapping="Wrap" Width="130">(Нажмите, чтобы открыть интерактивную карту)</TextBlock>
+                    </Canvas>
+                    
+                </Button>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="C:\Users\masha\Desktop\teatro-municipal.jpg" Margin="5" Height="80" Width="80"></Image>
+                    <Image Source="C:\Users\masha\Desktop\marathon-image.jpg" Margin="5" Height="80" Width="80"></Image>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="C:\Users\masha\Desktop\ibirapuera-park-lake.jpg" Margin="5" Height="80" Width="80"></Image>
+                    <Image Source="C:\Users\masha\Desktop\banco-banespa.jpg" Margin="5" Height="80" Width="80"></Image>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock>О Marathon Skills 2016</TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">Marathon Skills - фестиваль бега, проводимый каждый год в разных частях мира. Может быть три зачета: Полный Марафон, Полумарафон и  забег для новичков - таким образом фестиваль подходит всем.
+                </TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">В прошлых годах марафон был проведен в Осаке, Япония (2014); Лейпциг, Германия (2013); Ханой, Вьетнам (2012) и Йорк, Англия (2011).
+                </TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">В этом году, Marathon Skills очень зрелищно, продет в  Сан-Паоло, Бразилия, он должен быть самым большим фестивалем бега. Это финансовый центр Бразилии и самый большой город в Южной Америке.Сан-Пауло увидят тысячи бегунов, которые будут бежать мимо небоскребов, зеленые парки и великолепная архитектура.
+                </TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">Этот фестиваль привлек рекордное количество бегунов со всего мира.  особое внимание будет обращено на участников из Кении и Ямайки, поскольку мы надеемся увидеть победителя 2014 года. (Эфиоп закончил гонку за 45 минут 4 секунды.)
+                </TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">Атмосфера праздника обещает развлечения для всех зрителей.
+                </TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">События:</TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">- Программа "Самба" Полный Марафон начнется в Руа-Ду-Американо в 6 утра.
+                </TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">- Программа "Джонго" Полумарафон начнет в 7 утра Бегуны будут стартовать от недалеко от пересечения улицы Руа Ciniciata и Авенида.
+                </TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">- Программа "Капоэйра" в 5 км забег для новичков начнется в 15 часов Наши новички побегут от Мемориала Унинове.
+                </TextBlock>
+                <TextBlock TextWrapping ="Wrap" Width="500">Спасибо всем волонтерам, которые будут помогать нам проводить марафон!
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>

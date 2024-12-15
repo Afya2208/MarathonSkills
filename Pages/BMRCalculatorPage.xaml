@@ -1,0 +1,172 @@
+﻿<Page x:Class="MarathonSkills.Pages.BMRCalculatorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BMRCalculatorPage">
+
+    <StackPanel>
+        <TextBlock>BMR Калькулятор</TextBlock>
+        <TextBlock TextWrapping="Wrap">BMR используется в качестве оценки для измерения метаболизма взрослого человека, который изменяется в зависимости от роста, веса, возраста и различных медицинских факторов.</TextBlock>
+        <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
+            <StackPanel>
+                
+                <StackPanel>
+                   
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <RadioButton x:Name="MaleButton" GroupName="Gender" IsChecked="True" Width="90" Height="90">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}"
+                         BorderBrush="{TemplateBinding BorderBrush}"
+                         Background="LightGray"
+                         >
+
+                                            <StackPanel Width="{TemplateBinding Width}" Height="100">
+                                                <Image Width="30" Source="\Resources\male-icon.png"/>
+                                                <TextBlock>Мужской</TextBlock>
+                                            </StackPanel>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="border" Property="Background" Value="Gray"></Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                                <RadioButton.Content>
+
+                                    <StackPanel>
+
+                                        <Image Source="\Resources\male-icon.png"></Image>
+                                        <TextBlock>Мужской</TextBlock>
+                                    </StackPanel>
+                                </RadioButton.Content>
+                            </RadioButton>
+
+
+                        </StackPanel>
+                        <RadioButton x:Name="FemaleButton" Margin="10,0,0,0" GroupName="Gender"  Width="90" Height="90">
+                            <RadioButton.Template>
+                                <ControlTemplate TargetType="RadioButton">
+                                    <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}"
+  BorderBrush="{TemplateBinding BorderBrush}"
+  Background="LightGray"
+  >
+
+                                        <StackPanel Width="{TemplateBinding Width}" Height="100">
+                                            <Image Width="30" Source="\Resources\female-icon.png"/>
+                                            <TextBlock>Женский</TextBlock>
+                                        </StackPanel>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsChecked" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="Gray"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </RadioButton.Template>
+                            <RadioButton.Content>
+
+                                <StackPanel>
+
+                                    <Image Source="\Resources\male-icon.png"></Image>
+                                    <TextBlock>Мужской</TextBlock>
+                                </StackPanel>
+                            </RadioButton.Content>
+                        </RadioButton>
+
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Рост:</TextBlock>
+                        <TextBox x:Name="HeightBox"></TextBox>
+                        <TextBlock>см</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Вес:</TextBlock>
+                        <TextBox x:Name="WeightBox"></TextBox>
+                        <TextBlock>кг</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Возраст:</TextBlock>
+                        <TextBox x:Name="AgeBox"></TextBox>
+                        <TextBlock>лет</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="CalculateButton" Click="CalculateButton_Click">Рассчитать</Button>
+                        <Button x:Name="CancelButton" Click="CancelButton_Click">Отмена</Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="15,0,0,0">
+                <TextBlock>Инфо о каллориях</TextBlock>
+                <TextBlock>Ваш BMR</TextBlock>
+                <TextBlock x:Name="BMRBlock"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Ежедневно тратится калорий</TextBlock>
+                    <Button Width="30" Height="30" x:Name="InfoButton" Click="InfoButton_Click">i</Button>
+                    <Popup x:Name="popup" PlacementTarget="{Binding ElementName=BMRBlock}" Placement="Center" Width="500" Height="300">
+                        <Border BorderBrush="Black" BorderThickness="1">
+                            <Grid Background="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Button HorizontalAlignment="Right" Name="ClosePopupButton" Click="ClosePopupButton_Click">закрыть</Button>
+                                <TextBlock HorizontalAlignment="Center">Описание активностей</TextBlock>
+                                <StackPanel Grid.Row="1">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="190" TextAlignment="Left">Сидячий образ</TextBlock>
+                                        <TextBlock TextWrapping="Wrap" Width="250">Нет работы или работа за столом</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="190" TextAlignment="Left">Маленькая активность</TextBlock>
+                                        <TextBlock TextWrapping="Wrap" Width="250">Мало физических работы или занятия спортом 1-3 раза в неделю</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="190" TextAlignment="Left">Средняя активность</TextBlock>
+                                        <TextBlock TextWrapping="Wrap" Width="250">Умеренная физическая работа или занятия спортом 3 - 5 дней в неделю</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="190" TextAlignment="Left">Сильная активность</TextBlock>
+                                        <TextBlock TextWrapping="Wrap" Width="250">Сильные физическая нагрузка или занятия спортом 6 - 7 дней в неделю</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="190" TextAlignment="Left">Максимальная активность</TextBlock>
+                                        <TextBlock TextWrapping="Wrap" Width="250">Сильная ежедневная физическая нагрузка или спорт и физическая работа</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                            
+                        </Border>
+                    </Popup>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="Blue">Сидячий:</TextBlock>
+                    <TextBlock Foreground="Blue" x:Name="Act1Block"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="LightGreen">Маленькая активность:</TextBlock>
+                    <TextBlock Foreground="LightGreen" x:Name="Act2Block"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="Yellow">Средняя активность:</TextBlock>
+                    <TextBlock Foreground="Yellow" x:Name="Act3Block"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Foreground="Orange">Сильная активность:</TextBlock>
+                    <TextBlock Foreground="Orange" x:Name="Act4Block"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="Red">Максимальная активность:</TextBlock>
+                    <TextBlock Foreground="Red" x:Name="Act5Block"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>

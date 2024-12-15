@@ -1,0 +1,66 @@
+﻿<Page x:Class="MarathonSkills.Pages.RegistrationOnMarathonPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationOnMarathonPage">
+
+    <StackPanel>
+        <TextBlock>Регистрация на марафон</TextBlock>
+        <TextBlock TextWrapping="Wrap">Пожалуйста заполните всю информацию, чтобы зарегистрироваться на Marathon Skills 2016, проводимом в Москве, Russia. С вами свяжутся после регистрации для уточнения оплаты и другой информации</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <TextBlock>Вид марафона</TextBlock>
+                <CheckBox x:Name="FirstMarathonOption" Unchecked="FirstMarathonOption_Checked" Checked="FirstMarathonOption_Checked" Content="42km Полный марафон ($145)"></CheckBox>
+                <CheckBox x:Name="SecondMarathonOption" Unchecked="SecondMarathonOption_Checked" Checked="SecondMarathonOption_Checked" Content="21km Полумарафон ($75)"></CheckBox>
+                <CheckBox x:Name="ThirdMarathonOption" Unchecked="ThirdMarathonOption_Checked" Checked="ThirdMarathonOption_Checked" Content="5km Малая дистанция ($20)"></CheckBox>
+                <TextBlock>Детали спонсорства</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Взнос:</TextBlock>
+                    <ComboBox x:Name="FundComboBox" SelectionChanged="FundComboBox_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                
+                                <TextBlock Text="{Binding CharityName}"></TextBlock>
+                                
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <Button Name="CharityInfoButton" Click="CharityInfoButton_Click"  Width="20" Height="20">i</Button>
+                    <Popup x:Name="popup1" StaysOpen="True" Placement="Center" Width="900" Height="700"
+AllowsTransparency="True"  >
+                        <Border BorderThickness="2" BorderBrush="Black">
+                            <StackPanel Orientation="Vertical" Background="White">
+                                <DockPanel LastChildFill="False">
+                                    <TextBlock DockPanel.Dock="Left" x:Name="CharityName">Навзание</TextBlock>
+                                    <Button  DockPanel.Dock="Right" Width="60" Height="30"  x:Name="ClosePopupButton" Click="ClosePopupButton_Click">ЗАКРЫТЬ</Button>
+                                </DockPanel>
+                                <Image Name="CharityLogo" Height="300" Width="300"></Image>
+                                <TextBlock Name="CharityDescription" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Сумма взноса:</TextBlock>
+                    <TextBox x:Name="SponsorSumBox"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="RegistrationButton" Click="RegistrationButton_Click">Регистрация</Button>
+                    <Button x:Name="CancelButton" Click="CancelButton_Click">Отмена</Button>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock>Варианты комплектов</TextBlock>
+                <RadioButton Checked="KitOption_Checked" x:Name="FirstKitOption" IsChecked="True" Content="Вариант A ($0): Номер бегуна + RFID браслет" GroupName="Kit"></RadioButton>
+                <RadioButton Checked="KitOption_Checked" x:Name="SecondKitOption"  Content="Вариант B ($20): Вариант A + бейсболка + бутылка воды"  GroupName="Kit"></RadioButton>
+                <RadioButton Checked="KitOption_Checked" x:Name="ThirdKitOption"  Content="Вариант C ($45): Вариант B + футболка + сувенирный буклет"  GroupName="Kit"></RadioButton>
+                <TextBlock>Регистрационный взнос</TextBlock>
+                <TextBlock x:Name="RegistrationSumBlock">$...</TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>

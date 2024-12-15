@@ -1,0 +1,92 @@
+﻿<Page x:Class="MarathonSkills.Pages.AdministrateRunnerAccountPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      Loaded="Page_Loaded"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdministrateRunnerAccountPage">
+
+    <StackPanel>
+        <TextBlock>Управление бегуном</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Email:</TextBlock>
+                    <TextBlock Text="{Binding Email}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Имя:</TextBlock>
+                    <TextBlock Text="{Binding FirstName}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Фамилия:</TextBlock>
+                    <TextBlock Text="{Binding LastName}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Пол:</TextBlock>
+                    <TextBlock Text="{Binding Gender}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Дата рождения:</TextBlock>
+                    <TextBlock Text="{Binding DateOfBirthday}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Страна:</TextBlock>
+                    <TextBlock Text="{Binding CountryInfo}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Благотворительная организация:</TextBlock>
+                    <TextBlock Text="{Binding CharityInfo}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Пожертвовано:</TextBlock>
+                    <TextBlock Text="{Binding SponsorshipTarget}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Выбранный пакет:</TextBlock>
+                    <TextBlock >
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}Вариант {0}">
+                                <Binding Path="RaceKitOptionId"></Binding>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Дистанция:</TextBlock>
+                    <TextBlock Text="{Binding DistanceInfo}"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="20,0,20,0">
+                <Image Source="{Binding Photo}" Height="200" Width="150"></Image>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock>Регистрационный статус</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Зарегистрирован</TextBlock>
+                    <Image Height="30" Width="30" x:Name="status1Image"></Image>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Подтверждена оплата</TextBlock>
+                    <Image Height="30" Width="30" x:Name="status2Image"></Image>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Выдан пакет</TextBlock>
+                    <Image Height="30" Width="30" x:Name="status3Image"></Image>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Вышел на старт</TextBlock>
+                    <Image Height="30" Width="30" x:Name="status4Image"></Image>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Width="150" Name="RedactButton" Click="RedactButton_Click">Редактирование профиля</Button>
+            <Button Width="150" Name="ShowButton" Click="ShowButton_Click">Показать сертификат</Button>
+        </StackPanel>
+        
+    </StackPanel>
+</Page>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="MarathonSkills.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarathonSkills"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" MaxHeight="200"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="45" MaxHeight="45"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated"></Frame>
+        <StackPanel x:Name="HatPanel" Orientation="Vertical"  Background="#FF505050">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="BackButton" Click="BackButton_Click">Назад</Button>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Foreground="White">MARATHON SKILLS 2016</TextBlock>
+                    <TextBlock Foreground="#FFEBEBEB" >Москва, Россия, среда 21 октября...</TextBlock>
+                </StackPanel>
+                <Button Visibility="Collapsed" x:Name="Logout" Click="Logout_Click">Выйти из аккаунта</Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Background="#FF505050" Orientation="Vertical">
+            <TextBlock Foreground="#FFEBEBEB" x:Name="TimeUntilBlock" Grid.Row="2" HorizontalAlignment="Center">дата</TextBlock>
+        </StackPanel>
+
+    </Grid>
+</Window>

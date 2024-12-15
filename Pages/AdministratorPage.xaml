@@ -1,0 +1,24 @@
+﻿<Page x:Class="MarathonSkills.Pages.AdministratorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonSkills.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdministratorPage">
+
+    <StackPanel Orientation="Vertical">
+        <TextBlock>Меню администратора</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="UsersButton" Click="UsersButton_Click">Пользователи</Button>
+                <Button x:Name="CharityButton" Click="CharityButton_Click">Благотворительные организации</Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="VolunteerButton" Click="VolunteerButton_Click">Волонтеры</Button>
+                <Button x:Name="InventoryButton" Click="InventoryButton_Click">Инвентарь</Button>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>
